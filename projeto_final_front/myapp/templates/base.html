@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -9,22 +11,7 @@
       {% endblock %}
     </title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
-    <style>
-      .navbar-custom {
-          background-color: #000000;
-      }
-      .navbar-custom .navbar-brand {
-          color: white !important;
-      }
-      .nav-item.inactive .nav-link {
-          color: #b0b0b0 !important;
-          pointer-events: none; 
-      }
-      .nav-item.inactive .nav-link:hover {
-          color: #b0b0b0 !important;
-          background-color: #3e8e41;
-      }
-    </style>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}"/>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light navbar-custom">
@@ -44,6 +31,7 @@
       </div>
     </nav>
     <div class="container">{% block content %} {% endblock %}</div>
+    <script src="{% static 'js/script.js' %}"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
   </body>
