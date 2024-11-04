@@ -1,37 +1,46 @@
-{% extends "base.html" %} 
-{% block title %} Onde Salvei? {% endblock %}
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Onde Salvei?{% endblock %}
 {% block content %}
 <head>
-  <style>      
-      .content-container {
-          display: flex;
-          height: 80vh;
-      }
-      .left-section, .right-section {
-          flex: 1;
-      }
-      .left-section {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          padding: 20px;
-      }
-      .left-section p {
-          font-size: 1.2rem;
-          margin-bottom: 20px;
-      }
-      .right-section img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-      }
+    <style>
+        .content-container {
+            display: flex;
+            height: 80vh;
+        }
+        .left-section, .right-section {
+            flex: 1;
+        }
+        .left-section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 20px;
+        }
+        .left-section p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        .right-section img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
     </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Processamento Local de Cor Predominante</title>
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.min.js"></script>
-  
+    <title>Processamento Local de Cor Média RGB</title>
+    <script src="{% static 'js/script.js' %}"></script>
 </head>
-  <h1>Escolha uma pasta com imagens</h1>
-  <input type="file" id="directoryInput" webkitdirectory multiple>
+<body>
+    <div class="content-container">
+        <div class="left-section">
+            <h1>Escolha uma pasta com imagens</h1>
+            <button id="startApp">Iniciar App</button> <!-- Novo botão -->
+            <div id="results"></div>
+        </div>
+        <div class="right-section">
+            <!-- Aqui você pode adicionar uma imagem ou qualquer conteúdo adicional -->
+        </div>
+    </div>
 {% endblock %}

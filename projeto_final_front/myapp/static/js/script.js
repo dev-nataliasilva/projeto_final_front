@@ -1,30 +1,21 @@
-document.getElementById('directoryInput').addEventListener('change', async function(event) {
-  const files = event.target.files;
-  const colorThief = new ColorThief();
-  const colorResults = [];
-
-  for (const file of files) {
-    // Filtrar apenas arquivos de imagem
-    if (!file.type.startsWith("image/")) continue;
-
-    // Ler o arquivo como Data URL usando FileReader
-    const fileReader = new FileReader();
-
-    fileReader.onload = async function(event) {
-      const img = document.createElement('img');
-      img.src = event.target.result;
-
-      // Processar a imagem para extrair a cor predominante
-      img.onload = () => {
-        const dominantColor = colorThief.getColor(img);
-        colorResults.push({ fileName: file.name, color: dominantColor });
-
-        // Exibir os resultados no console
-        console.log(`Imagem: ${file.name} - Cor Predominante: ${dominantColor}`);
-      };
-    };
-
-    // Ler a imagem como Data URL
-    fileReader.readAsDataURL(file);
-  }
-})
+document.getElementById("startApp").addEventListener("click", function() {
+    // Faz uma requisição GET para iniciar o app
+    fetch('http://localhost:5000/start_app', {
+        method: 'GET', // Método GET
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json(); // Se espera um JSON de volta
+    })
+    .then(data => {
+        console.log(data); // Lida com os dados recebidos do Flask
+    })
+    .catch(error => {
+        console.error('Houve um problema com a requisição Fetch:', error);
+    });
+});
