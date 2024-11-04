@@ -23,3 +23,8 @@
 .center-button:hover {
     background-color: #45a049;
 }
+#loader {
+    display: none;
+    font-size: 1.5rem;
+    color: blue;
+}

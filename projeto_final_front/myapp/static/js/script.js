@@ -1,4 +1,12 @@
 document.getElementById("startApp").addEventListener("click", function() {
+    const resultsContainer = document.getElementById("results");
+    const loader = document.createElement("div");
+    loader.innerText = "Carregando...";
+    loader.style.fontSize = "1.5rem";
+    loader.style.color = "blue"; // Você pode estilizar o loader como preferir
+    resultsContainer.innerHTML = ''; // Limpa resultados anteriores
+    resultsContainer.appendChild(loader); // Adiciona o loader ao container
+
     fetch('http://localhost:5000/start_app', {
         method: 'GET',
         headers: {
@@ -13,8 +21,6 @@ document.getElementById("startApp").addEventListener("click", function() {
     })
     .then(data => {
         console.log(data); // Mostra o que está sendo retornado pela API
-        const resultsContainer = document.getElementById("results");
-        resultsContainer.innerHTML = ''; // Limpa resultados anteriores
 
         // Verifica se data é um array
         if (Array.isArray(data)) {
@@ -23,13 +29,6 @@ document.getElementById("startApp").addEventListener("click", function() {
                 path: fileInfo.path, // Supondo que fileInfo.path existe
                 average_rgb: fileInfo.average_rgb // Supondo que fileInfo.average_rgb existe
             }));
-
-            // Exibir os arquivos e suas médias RGB
-            payload.forEach(fileInfo => {
-                const fileElement = document.createElement("div");
-                fileElement.innerText = `Caminho: ${fileInfo.path}, Média RGB: ${fileInfo.average_rgb}`;
-                resultsContainer.appendChild(fileElement);
-            });
 
             // Enviar os dados para a API externa
             return fetch('http://localhost:8080/api/receive-colors/', {
@@ -47,12 +46,21 @@ document.getElementById("startApp").addEventListener("click", function() {
         if (!postResponse.ok) {
             throw new Error('Erro ao enviar os dados para a API externa');
         }
-        return postResponse.json(); // Se necessário, você pode lidar com a resposta aqui
+        return postResponse.json(); // Recebe a resposta da API
     })
     .then(postData => {
         console.log('Dados enviados com sucesso:', postData);
+        resultsContainer.innerHTML = ''; // Limpa o loader
+
+        // Exibir os resultados retornados pela API
+        postData.forEach(fileInfo => {
+            const fileElement = document.createElement("div");
+            fileElement.innerText = `Caminho: ${fileInfo.path}, Média RGB: ${fileInfo.average_rgb}, Cor Prevista: ${fileInfo.predicted_color}`;
+            resultsContainer.appendChild(fileElement);
+        });
     })
     .catch(error => {
         console.error('Houve um problema com a requisição Fetch:', error);
+        resultsContainer.innerHTML = 'Ocorreu um erro ao processar a solicitação.';
     });
 });
