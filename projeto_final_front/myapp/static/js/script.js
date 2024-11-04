@@ -1,7 +1,6 @@
 document.getElementById("startApp").addEventListener("click", function() {
-    // Faz uma requisição GET para iniciar o app
     fetch('http://localhost:5000/start_app', {
-        method: 'GET', // Método GET
+        method: 'GET',
         headers: {
             'Content-Type': 'application/json',
         }
@@ -10,10 +9,19 @@ document.getElementById("startApp").addEventListener("click", function() {
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
-        return response.json(); // Se espera um JSON de volta
+        return response.json();
     })
     .then(data => {
-        console.log(data); // Lida com os dados recebidos do Flask
+        console.log(data.files); // Agora data.files é um array de objetos
+        const resultsContainer = document.getElementById("results");
+        resultsContainer.innerHTML = ''; // Limpa resultados anteriores
+
+        // Exibir os arquivos e suas médias RGB
+        data.files.forEach(fileInfo => {
+            const fileElement = document.createElement("div");
+            fileElement.innerText = `Caminho: ${fileInfo.path}, Média RGB: ${fileInfo.average_rgb}`;
+            resultsContainer.appendChild(fileElement);
+        });
     })
     .catch(error => {
         console.error('Houve um problema com a requisição Fetch:', error);
