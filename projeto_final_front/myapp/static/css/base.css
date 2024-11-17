@@ -80,6 +80,8 @@ body {
     flex-direction: column;   /* Os itens vão ser organizados verticalmente */
     color:var(--cor-azul);
     background-color:var(--cor-clara);
+    height: 100vh;
+    width: auto;
 }
 
 /* Container para o conteúdo da página */
@@ -90,4 +92,18 @@ body {
     flex-grow: 1;             /* Faz com que o container ocupe o restante do espaço disponível */
     overflow-y: auto;         /* Permite rolagem vertical se necessário */
     margin-top: 8%;           /* Adiciona espaço para a barra de navegação fixa */
+}
+
+/* Container para o conteúdo da página */
+.content-container {
+    display: flex;
+    flex: 1;                /* Faz o container ocupar o restante do espaço */
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: none;  /* Remover a limitação de largura para a container */
+    }
 }

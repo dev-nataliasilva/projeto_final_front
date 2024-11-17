@@ -1,16 +1,6 @@
 /* Ajuste do corpo da página */
-body {    
-    height: 100vh;
-    width: auto;
+body {       
     font-size: 2rem;
-}
-
-/* Container para o conteúdo da página */
-.content-container {
-    display: flex;
-    flex: 1;                /* Faz o container ocupar o restante do espaço */
-    padding: 0;
-    box-sizing: border-box;
 }
 
 /* Seção do texto */
@@ -40,8 +30,3 @@ body {
     object-fit: cover;       /* Garante que a imagem cubra a área sem distorção */
 }
 
-@media (min-width: 1200px) {
-    .container {
-        max-width: none;  /* Remover a limitação de largura para a container */
-    }
-}
