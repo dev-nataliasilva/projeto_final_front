@@ -1,5 +1,4 @@
 from pathlib import Path
-
 from enum import Enum
 
 BASE_DIR = Path(__file__).resolve().parent.parent

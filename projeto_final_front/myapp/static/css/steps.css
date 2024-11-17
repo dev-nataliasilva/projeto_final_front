@@ -123,8 +123,17 @@ button.next-step-disabled:hover {
     position: relative;
     width: 40px;
     height: 40px;
-    margin: 0 5px;
+    margin: 0;
     cursor: pointer;
+}
+
+.color-circle .color {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    transition: transform 0.2s ease-in-out;
 }
 
 .color-circle input {
@@ -137,17 +146,9 @@ button.next-step-disabled:hover {
     cursor: pointer;
 }
 
-.color-circle .color {
-    display: block;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    box-shadow: 0 0 5px rgba(0,0,0,0.2);
-    transition: transform 0.2s ease-in-out;
-}
 
 /* Efeito quando o checkbox é selecionado */
 .color-circle input:checked + .color {
     transform: scale(1.1); /* Aumenta a bolinha ao selecionar */
-    border: 2px solid #333; /* Adiciona uma borda quando selecionada */
+    border: 2px solid var(--cor-azul-escuro); /* Adiciona uma borda quando selecionada */
 }

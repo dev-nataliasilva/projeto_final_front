@@ -5,16 +5,10 @@
 <link rel="stylesheet" href="{% static 'css/result_search.css' %}"/>
 
 <div class="content-container">
-    <div class="left-section">
-        <h1>Escolha uma pasta com imagens</h1>
-        <button id="startApp">Iniciar App</button> <!-- Novo botão -->
-        <div id="results">
-            <div id="loader" style="display: none;">Carregando...</div> <!-- Elemento de loader -->
-        </div>
-    </div>
-    <div class="right-section">
-        <!-- Aqui você pode adicionar uma imagem ou qualquer conteúdo adicional -->
+    <div id="results">
+        <div id="loader" style="display: none;">Carregando...</div> <!-- Elemento de loader -->
     </div>
 </div>
+
 <script src="{% static 'js/result_search.js' %}"></script>
 {% endblock %}
