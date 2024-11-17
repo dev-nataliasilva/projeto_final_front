@@ -49,7 +49,6 @@ document.addEventListener("DOMContentLoaded", function () {
             return postResponse.json(); // Recebe a resposta da API
         })
         .then(postData => {
-            console.log('Dados enviados com sucesso:', postData);
             resultsContainer.innerHTML = ''; // Remove o loader
 
             // Exibir os resultados retornados pela API
