@@ -91,7 +91,7 @@ body {
     box-sizing: border-box;
     flex-grow: 1;             /* Faz com que o container ocupe o restante do espaço disponível */
     overflow-y: auto;         /* Permite rolagem vertical se necessário */
-    margin-top: 8%;           /* Adiciona espaço para a barra de navegação fixa */
+    margin-top: 6%;           /* Adiciona espaço para a barra de navegação fixa */
 }
 
 /* Container para o conteúdo da página */
