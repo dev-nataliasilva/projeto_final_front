@@ -70,6 +70,15 @@
     color: var(--cor-azul-escuro);
 }
 
+.second-button {
+    font-size: 1.8rem;
+    padding: 13px 28px;
+    background-color: var(--cor-branco);
+    color: var(--cor-azul-escuro);
+    border: 2px solid var(--cor-azul-escuro);
+    border-radius: 5px;
+}
+
 /* Ajuste do corpo da página */
 body {
     font-family: 'Wondercity', sans-serif;

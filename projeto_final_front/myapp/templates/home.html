@@ -9,9 +9,14 @@
     <!-- Seção do Texto -->
     <div class="left-section">
         <p>Encontre exatamente a foto que você está procurando sem precisar baixar ou clicar de pasta em pasta.</p>
-        <a href="{% url 'result_search' %}">
-            <button class="center-button">Experimente!</button>
-        </a>
+        <div>
+            <a href="{% url 'steps' %}">
+                <button class="center-button">Experimente!</button>
+            </a>
+            <a href="{% url 'introduction' %}">
+                <button class="second-button">Como funciona?</button>
+            </a>
+        </div>
     </div>
 
     <!-- Seção da Imagem -->
@@ -19,5 +24,4 @@
         <img src="{% static 'images/home_image.png' %}" alt="Imagem descritiva">
     </div>
 </div>
-
 {% endblock %}

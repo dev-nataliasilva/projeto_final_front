@@ -4,6 +4,9 @@ from django.shortcuts import render, HttpResponse
 def home(request):
     return render(request, "home.html")
 
+def introduction(request):
+    return render(request, "introduction.html")
+
 def steps(request):
     return render(request, "steps.html")
 

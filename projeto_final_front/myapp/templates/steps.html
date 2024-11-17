@@ -3,61 +3,37 @@
 {% block title %}Onde Salvei?{% endblock %}
 {% block content %}
 <link rel="stylesheet" href="{% static 'css/steps.css' %}"/>
-<script src="{% static 'js/script.js' %}"></script>
 
-<body>
-    <div class="step-container">
-        <!-- Barra de Progresso -->
-        <div class="progress-bar">
-            <div class="progress-step step-1 active"></div>
-            <div class="progress-step step-2"></div>
-            <div class="progress-step step-3"></div>
-        </div>
+<div class="step-container">
+    <!-- Barra de Progresso -->
+    <div class="progress-bar">
+        <div class="progress-step step-1 active"></div>
+        <div class="progress-step step-2"></div>
+        <div class="progress-step step-3"></div>
+    </div>
 
-        <!-- Conteúdo das Etapas -->
-        <div class="content-container">
-            <div class="left-section">
-                <div id="step-1" class="step-content">
-                    <h1>Escolher cor</h1>
-                    <p>Selecione a cor desejada.</p>
-                    <button class="next-step" data-step="1">Próximo</button>
-                </div>
-
-                <div id="step-2" class="step-content" style="display:none;">
-                    <h1>Baixar agente</h1>
-                    <p>Baixe o agente de processamento.</p>
-                    <button class="next-step" data-step="2">Próximo</button>
-                </div>
-
-                <div id="step-3" class="step-content" style="display:none;">
-                    <h1>Selecionar pasta</h1>
-                    <p>Escolha a pasta onde os arquivos serão salvos.</p>
-                    <button class="next-step" data-step="3">Próximo</button>
-                </div>
+    <!-- Conteúdo das Etapas -->
+    <div class="content-container">
+        <div class="left-section">
+            <div id="step-1" class="step-content">
+                <h1>Escolher cor</h1>
+                <p>Selecione a cor desejada.</p>
+                <button class="next-step" data-step="1">Próximo</button>
             </div>
-            
-            <div class="right-section">
-                <!-- Aqui você pode adicionar conteúdo adicional, como imagens -->
+
+            <div id="step-2" class="step-content" style="display:none;">
+                <h1>Baixar agente</h1>
+                <p>Baixe o agente de processamento.</p>
+                <button class="next-step" data-step="2">Próximo</button>
+            </div>
+
+            <div id="step-3" class="step-content" style="display:none;">
+                <h1>Selecionar pasta</h1>
+                <p>Escolha a pasta onde os arquivos serão salvos.</p>
+                <button class="next-step" data-step="3" data-url="{% url 'result_search' %}">Próximo</button>
             </div>
         </div>
     </div>
-
-    <script>
-        // Script para navegação entre as etapas
-        document.querySelectorAll('.next-step').forEach(button => {
-            button.addEventListener('click', function() {
-                let currentStep = parseInt(this.dataset.step);
-                let nextStep = currentStep + 1;
-
-                // Esconde a etapa atual e mostra a próxima
-                document.getElementById('step-' + currentStep).style.display = 'none';
-                document.getElementById('step-' + nextStep).style.display = 'block';
-
-                // Atualiza a barra de progresso
-                document.querySelector('.step-' + currentStep).classList.add('completed');
-                document.querySelector('.step-' + nextStep).classList.add('active');
-            });
-        });
-    </script>
-</body>
+</div>
+<script src="{% static 'js/steps.js' %}"></script>
 {% endblock %}
