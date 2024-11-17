@@ -1,0 +1,80 @@
+@font-face {
+    font-family: 'Chloe';
+    src: url('../fonts/chloe font v1.ttf') format('truetype');
+  }
+
+/* Barra de navegação personalizada */
+.navbar-custom {
+    background-color: #000000;
+    font-size: 1.5rem;
+    width: 100%;         /* A barra ocupa 100% da largura da tela */
+    height: 8%;          /* A altura da barra de navegação */
+    display: flex;       /* Usamos flexbox para organizar o conteúdo da barra */
+    align-items: center; /* Centraliza os itens dentro da barra (logo e botões) verticalmente */
+    padding: 0 10px;     /* Um pequeno padding para não grudar as bordas */
+    position: fixed;     /* Barra de navegação fixa no topo */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;        /* Garante que a barra de navegação fique acima de outros elementos */
+}
+
+/* Ícone dentro da barra de navegação */
+.navbar-custom .navbar-brand {
+    display: flex;
+    justify-content: center;  /* Centraliza a imagem horizontalmente */
+    align-items: center;      /* Centraliza a imagem verticalmente */
+    height: 100%;             /* A altura da área onde a imagem será inserida */
+}
+
+/* Ajustes para a imagem */
+.img-logo {
+    height: 100%;       /* A imagem ocupará 100% da altura da barra */
+    width: auto;        /* A largura da imagem será ajustada proporcionalmente */
+    object-fit: contain; /* A imagem se ajusta proporcionalmente sem distorcer */    
+}
+
+/* Estilos para os links de navegação */
+.nav-item.inactive .nav-link {
+    color: #b0b0b0 !important;
+    pointer-events: none;
+}
+
+.nav-item.inactive .nav-link:hover {
+    color: #b0b0b0 !important;
+    background-color: #3e8e41;
+}
+
+/* Outros estilos de botão e container */
+.center-button {
+    font-size: 1.5rem;
+    padding: 15px 30px;
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.center-button:hover {
+    background-color: #45a049;
+}
+
+/* Ajuste do corpo da página */
+body {
+    font-family: 'Chloe', sans-serif;
+    font-size: 1.8rem;
+    margin: 0;
+    padding: 0;
+    display: flex;            /* Usamos flexbox no body */
+    flex-direction: column;   /* Os itens vão ser organizados verticalmente */
+}
+
+/* Container para o conteúdo da página */
+.container {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    flex-grow: 1;             /* Faz com que o container ocupe o restante do espaço disponível */
+    overflow-y: auto;         /* Permite rolagem vertical se necessário */
+    margin-top: 8%;           /* Adiciona espaço para a barra de navegação fixa */
+}

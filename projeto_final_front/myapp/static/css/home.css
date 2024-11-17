@@ -1,0 +1,43 @@
+/* Ajuste do corpo da página */
+body {    
+    background: radial-gradient(circle at 75% 50%, #f2f000 0%, rgba(242, 240, 0, 0) 80%);
+    height: 100vh;
+}
+
+/* Container para o conteúdo da página */
+.content-container {
+    display: flex;
+    flex: 1;                /* Faz o container ocupar o restante do espaço */
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Seção do texto */
+.left-section {
+    flex: 1;                /* A seção de texto ocupa metade do espaço */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Seção da imagem */
+.right-section {
+    flex: 1;                /* A seção de imagem ocupa metade do espaço */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Ajustes na imagem */
+.right-section img {
+    width: 100%;             /* A imagem ocupa 100% da largura da seção */
+    height: auto;            /* Mantém a proporção da altura */
+    object-fit: cover;       /* Garante que a imagem cubra a área sem distorção */
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: none;  /* Remover a limitação de largura para a container */
+    }
+}

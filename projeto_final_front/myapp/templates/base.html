@@ -6,16 +6,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
-      {% block title %}
-        Django App
-      {% endblock %}
+      {% block title %} Onde salvei? {% endblock %}
     </title>
+    <link rel="icon" href="{% static 'images/Onde salvei - lemure preto.png' %}" type="image/x-icon" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="{% static 'css/main.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}"/>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light navbar-custom">
-      <a class="navbar-brand" href="{% url 'home' %}">Onde salvei?</a>
+      <a class="navbar-brand" href="{% url 'home' %}">
+        <img src="{% static 'images/Onde salvei - logo branca.png' %}" alt="Onde salvei?" class="img-logo"/>
+      </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
