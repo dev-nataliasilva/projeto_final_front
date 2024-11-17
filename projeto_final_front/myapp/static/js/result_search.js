@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const resultsContainer = document.getElementById("results");
 
     // Exibir o loader durante o processamento
@@ -11,9 +11,15 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Recupera os dados do localStorage
     const startAppData = JSON.parse(localStorage.getItem('startAppData'));
+    const selectedColors = JSON.parse(localStorage.getItem('selectedColors'));
 
     if (!startAppData) {
         resultsContainer.innerHTML = 'Nenhum dado encontrado. Volte à página anterior e inicie o processo.';
+        return;
+    }
+
+    if (!selectedColors || selectedColors.length === 0) {
+        resultsContainer.innerHTML = 'Nenhuma categoria de cor selecionada. Volte e selecione pelo menos uma cor.';
         return;
     }
 
@@ -31,7 +37,10 @@ document.addEventListener("DOMContentLoaded", function() {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify(payload) // Envia o payload estruturado como JSON
+            body: JSON.stringify({
+                colors: payload,  // Envia os dados das cores
+                categories: selectedColors  // Envia as categorias de cores
+            })
         })
         .then(postResponse => {
             if (!postResponse.ok) {

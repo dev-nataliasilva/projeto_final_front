@@ -60,3 +60,15 @@ function StartAppRequest() {
 document.getElementById("startAppButton").addEventListener("click", function() {
     StartAppRequest(); // Chama a função StartAppRequest ao clicar no botão
 });
+
+// Armazenando as categorias de cores selecionadas
+document.querySelectorAll('.color-picker input[type="checkbox"]').forEach(input => {
+    input.addEventListener('change', function() {
+        // Recupera as cores selecionadas
+        const selectedColors = Array.from(document.querySelectorAll('.color-picker input[type="checkbox"]:checked'))
+            .map(checkbox => checkbox.value);
+        
+        // Armazena as cores selecionadas no localStorage
+        localStorage.setItem('selectedColors', JSON.stringify(selectedColors));
+    });
+});
