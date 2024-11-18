@@ -13,66 +13,70 @@
     </div>
 
     <!-- Conteúdo das Etapas -->
-    <div class="content-container">
-        <div id="step-1" class="step-content">
-            <h1>Escolher cores</h1>
-            <p class="progress-text">As imagens serão procuradas de acordo com a paleta de cores selecionada</p>
+    <div id="step-1" class="step-content">
+        <h1>Escolher cores</h1>
+        <p class="progress-text">As imagens serão procuradas de acordo com a paleta de cores selecionada</p>
 
-            <!-- Bolinhas de cores do arco-íris (checkboxes) -->
-            <div class="color-picker">
-                <label class="color-circle">
-                    <input type="checkbox" name="color" value="Branco" />
-                    <span class="color" style="background-color: rgb(255, 255, 255);"></span>
-                </label>
-                <label class="color-circle">
-                    <input type="checkbox" name="color" value="Preto" />
-                    <span class="color" style="background-color: black ;"></span>
-                </label>
-                <label class="color-circle">
-                    <input type="checkbox" name="color" value="Azul" />
-                    <span class="color" style="background-color: blue"></span>
-                </label>
-                <label class="color-circle">
-                    <input type="checkbox" name="color" value="Vermelho" />
-                    <span class="color" style="background-color: red;"></span>
-                </label>
-                <label class="color-circle">
-                    <input type="checkbox" name="color" value="Verde" />
-                    <span class="color" style="background-color: green;"></span>
-                </label>
-                <label class="color-circle">
-                    <input type="checkbox" name="color" value="Laranja" />
-                    <span class="color" style="background-color: orange;"></span>
-                </label>
-                <label class="color-circle">
-                    <input type="checkbox" name="color" value="Amarelo" />
-                    <span class="color" style="background-color: yellow;"></span>
-                </label>
-                <label class="color-circle">
-                    <input type="checkbox" name="color" value="Roxo" />
-                    <span class="color" style="background-color: purple;"></span>
-                </label>
-                <label class="color-circle">
-                    <input type="checkbox" name="color" value="Marrom" />
-                    <span class="color" style="background-color: brown;"></span>
-                </label>
-            </div>
-
-            <button class="next-step" data-step="1">Próximo</button>
+        <!-- Bolinhas de cores do arco-íris (checkboxes) -->
+        <div class="color-picker">
+            <label class="color-circle">
+                <input type="checkbox" name="color" value="Branco" />
+                <span class="color" style="background-color: rgb(255, 255, 255);"></span>
+            </label>
+            <label class="color-circle">
+                <input type="checkbox" name="color" value="Preto" />
+                <span class="color" style="background-color: black ;"></span>
+            </label>
+            <label class="color-circle">
+                <input type="checkbox" name="color" value="Azul" />
+                <span class="color" style="background-color: blue"></span>
+            </label>
+            <label class="color-circle">
+                <input type="checkbox" name="color" value="Vermelho" />
+                <span class="color" style="background-color: red;"></span>
+            </label>
+            <label class="color-circle">
+                <input type="checkbox" name="color" value="Verde" />
+                <span class="color" style="background-color: green;"></span>
+            </label>
+            <label class="color-circle">
+                <input type="checkbox" name="color" value="Laranja" />
+                <span class="color" style="background-color: orange;"></span>
+            </label>
+            <label class="color-circle">
+                <input type="checkbox" name="color" value="Amarelo" />
+                <span class="color" style="background-color: yellow;"></span>
+            </label>
+            <label class="color-circle">
+                <input type="checkbox" name="color" value="Roxo" />
+                <span class="color" style="background-color: purple;"></span>
+            </label>
+            <label class="color-circle">
+                <input type="checkbox" name="color" value="Marrom" />
+                <span class="color" style="background-color: brown;"></span>
+            </label>
         </div>
 
-        <div id="step-2" class="step-content" style="display:none;">
-            <h1>Baixar agente</h1>
-            <p class="progress-text">Baixe o agente que irá procurar as imagens. Não se preocupe, não é necessário interagir com ele. Basta instalar e o resto é por aqui mesmo!</p>
-            <button class="next-step" data-step="2">Próximo</button>
-        </div>
+        <button class="next-step next-step-disabled" data-step="1" disabled>Próximo</button>
+    </div>
 
-        <div id="step-3" class="step-content" style="display:none;">
-            <h1>Selecionar pasta</h1>
-            <p class="progress-text">Selecione o diretório pastas onde deseja procurar as imagens. Pode ser apenas a pasta principal, já que o agente procura também nas pastas que existem dentro das pastas. Assim você não precisa ficar procurando</p>
-            <button id="startAppButton" class="start-app-button">Selecionar pasta</button>
-            <button class="next-step next-step-disabled" data-step="3" data-url="{% url 'result_search' %}" disabled>Iniciar busca!</button>
-        </div>
+    <div id="step-2" class="step-content" style="display:none;">
+        <h1>Baixar agente</h1>
+        <p class="progress-text">Baixe o agente que irá procurar as imagens. Não se preocupe, não é necessário interagir com ele. Basta instalar e o resto é por aqui mesmo!</p>
+        
+        <!-- Link para download do executável -->
+        <a href="{% static 'downloads/Agente - Onde Salvei.exe' %}" download>
+            <button class="download-button">Baixar Agente</button>
+        </a>
+        
+        <button class="next-step" data-step="2">Próximo</button>
+    </div>
+
+    <div id="step-3" class="step-content" style="display:none;">
+        <h1>Selecionar pasta</h1>
+        <p class="progress-text">Selecione o diretório onde deseja procurar as imagens. Pode ser apenas a pasta principal, já que o agente procura também nas subpastas.</p>
+        <button id="startAppButton" class="start-app-button">Selecionar pasta</button>
+        <button class="next-step next-step-disabled" data-step="3" data-url="{% url 'result_search' %}" disabled>Iniciar busca!</button>
     </div>
 </div>
 <script src="{% static 'js/steps.js' %}"></script>

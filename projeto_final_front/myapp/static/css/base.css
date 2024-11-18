@@ -116,3 +116,7 @@ body {
         max-width: none;  /* Remover a limitação de largura para a container */
     }
 }
+
+a:focus {
+    outline: none;
+}

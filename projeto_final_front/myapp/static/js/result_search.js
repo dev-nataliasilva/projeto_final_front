@@ -10,16 +10,19 @@ document.addEventListener("DOMContentLoaded", function () {
     resultsContainer.appendChild(loader); // Adicionar o loader ao container
 
     // Recupera os dados do localStorage
+    console.log(localStorage);
     const startAppData = JSON.parse(localStorage.getItem('startAppData'));
     const selectedColors = JSON.parse(localStorage.getItem('selectedColors'));
 
     if (!startAppData) {
         resultsContainer.innerHTML = 'Nenhum dado encontrado. Volte à página anterior e inicie o processo.';
+        clearLocalStorage(); // Limpa o localStorage caso não haja dados
         return;
     }
 
     if (!selectedColors || selectedColors.length === 0) {
         resultsContainer.innerHTML = 'Nenhuma categoria de cor selecionada. Volte e selecione pelo menos uma cor.';
+        clearLocalStorage(); // Limpa o localStorage caso as cores não tenham sido selecionadas
         return;
     }
 
@@ -57,12 +60,18 @@ document.addEventListener("DOMContentLoaded", function () {
                 fileElement.innerText = `Caminho: ${fileInfo.path}, Média RGB: ${fileInfo.average_rgb}, Cor Prevista: ${fileInfo.predicted_color}`;
                 resultsContainer.appendChild(fileElement);
             });
+
+            // Limpa o localStorage após exibir os resultados
+            clearLocalStorage();
         })
         .catch(error => {
             console.error('Houve um problema com a requisição Fetch:', error);
             resultsContainer.innerHTML = 'Ocorreu um erro ao processar a solicitação.';
+            // Limpa o localStorage em caso de erro
+            clearLocalStorage();
         });
     } else {
         resultsContainer.innerHTML = 'Os dados armazenados não estão no formato esperado.';
+        clearLocalStorage(); // Limpa o localStorage caso o formato esteja incorreto
     }
 });
