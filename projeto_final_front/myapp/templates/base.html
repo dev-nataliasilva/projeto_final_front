@@ -20,20 +20,7 @@
     <nav class="navbar navbar-expand-lg navbar-light navbar-custom">
       <a class="navbar-brand" href="{% url 'home' %}">
         <img src="{% static 'images/Onde salvei - logo branca.png' %}" alt="Onde salvei?" class="img-logo"/>
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item inactive">
-            <a class="nav-link" href="#">Login</a>
-          </li>
-          <li class="nav-item inactive">
-            <a class="nav-link" href="#">Cadastre-se</a>
-          </li>
-        </ul>
-      </div>
+      </a>    
     </nav>
     <div class="container">{% block content %} {% endblock %}</div>
   </body>
