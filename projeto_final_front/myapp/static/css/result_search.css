@@ -1,0 +1,21 @@
+/* Seção do texto */
+.left-section {
+    flex: 1;                /* A seção de texto ocupa metade do espaço */
+    padding: 15px;
+    padding-right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 1rem;
+}
+
+/* Seção da imagem */
+.right-section {
+    flex: 1;                /* A seção de texto ocupa metade do espaço */
+    padding: 15px;
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 1rem;
+}
