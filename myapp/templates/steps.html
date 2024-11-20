@@ -62,7 +62,7 @@
 
     <div id="step-2" class="step-content" style="display:none;">
         <h1>Baixar agente</h1>
-        <p class="progress-text">Baixe o agente que irá procurar as imagens. Não se preocupe, não é necessário interagir com ele. Basta instalar e o resto é por aqui mesmo!</p>
+        <p class="progress-text">Baixe o agente que irá procurar as imagens. Não se preocupe, não é necessário interagir com ele. Basta executar e o resto é por aqui mesmo!</p>
         
         <!-- Link para download do executável -->
         <a href="{% static 'downloads/Agente - Onde Salvei.exe' %}" download>
@@ -74,7 +74,7 @@
 
     <div id="step-3" class="step-content" style="display:none;">
         <h1>Selecionar pasta</h1>
-        <p class="progress-text">Selecione o diretório onde deseja procurar as imagens. Pode ser apenas a pasta principal, já que o agente procura também nas subpastas.</p>
+        <p class="progress-text">Selecione o diretório onde deseja procurar as imagens. Pode ser apenas a pasta principal, já que o agente procura também nas subpastas. Não esqueça de verificar se o Agente está ativo! Caso contrário, procure o arquivo que foi baixado na etapa anterior e clique nele para iniciar.</p>
         <button id="startAppButton" class="start-app-button">Selecionar pasta</button>
         <button class="next-step next-step-disabled" data-step="3" data-url="{% url 'result_search' %}" disabled>Iniciar busca!</button>
     </div>
