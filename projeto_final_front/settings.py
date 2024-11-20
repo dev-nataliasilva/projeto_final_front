@@ -5,8 +5,12 @@ import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-(2qx6b(6#o=v8z7lid&is87_edlg_@y785qrti3*odr!+@l3%k'
-DEBUG = True
-ALLOWED_HOSTS = []
+DEBUG = False
+ALLOWED_HOSTS = [
+    'ondesalvei-afacdb17af64.herokuapp.com',  # Adicione este domínio
+    'localhost',  # Para desenvolvimento local
+    '127.0.0.1',  # Para desenvolvimento local
+]
 
 INSTALLED_APPS = [
     'django.contrib.staticfiles',
