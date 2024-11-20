@@ -1,5 +1,6 @@
 from pathlib import Path
 from enum import Enum
+import os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -59,3 +60,6 @@ class Color(Enum):
 # Dicionário de cores para usar no template
 COLOR_CATEGORIES = {color.value: color.name for color in Color}
 
+# Simplified static file serving.
+# https://warehouse.python.org/project/whitenoise/
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
