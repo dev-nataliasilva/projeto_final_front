@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
             average_rgb: fileInfo.average_rgb
         }));
 
-        fetch('http://localhost:8080/api/receive-colors/', {
+        fetch('https://ondesalvei-api-3e0bb38ffd71.herokuapp.com/api/receive-colors/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
