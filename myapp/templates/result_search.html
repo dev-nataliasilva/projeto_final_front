@@ -1,14 +1,15 @@
-{% extends "base.html" %}
-{% load static %}
-{% block title %}Onde Salvei?{% endblock %}
+{% extends "base.html" %}  <!-- Extende o template base.html para herdar o layout comum -->
+{% load static %}  <!-- Carrega as tags do Django para servir arquivos estáticos -->
+{% block title %}Onde Salvei?{% endblock %}  <!-- Define o título da página -->
+
 {% block content %}
-<link rel="stylesheet" href="{% static 'css/result_search.css' %}"/>
+<link rel="stylesheet" href="{% static 'css/result_search.css' %}"/>  <!-- Link para o arquivo CSS específico da página -->
 
 <div class="content-container">
     <!-- Seção da esquerda (Resultados) -->
     <div class="left-section">
         <div id="results-container">
-            <h3 id="results-title" style="display: none;">Resultados</h3> <!-- Oculto inicialmente -->
+            <h3 id="results-title" style="display: none;">Resultados</h3> <!-- Título de resultados inicialmente oculto -->
             <table id="results-table" style="display: none;">
                 <thead>
                     <tr>
@@ -17,26 +18,27 @@
                     </tr>
                 </thead>
                 <tbody id="results-body">
-                    <!-- Os dados serão preenchidos dinamicamente aqui -->
+                    <!-- As linhas da tabela serão preenchidas dinamicamente -->
                 </tbody>
             </table>
-            <div id="loader">Carregando...</div> <!-- Loader visível inicialmente -->
+            <div id="loader">Carregando...</div> <!-- Loader visível enquanto os dados estão sendo processados -->
         </div>
     </div>
 
     <!-- Seção da direita (Metadados) -->
     <div class="right-section">
-        <h3 id="metadata-title" style="display: none;">Metadados</h3> <!-- Oculto inicialmente -->
-        <ul id="metadata" style="display: none;"> <!-- Inicialmente oculto -->
-            <li><strong>Cores selecionadas:</strong> <span id="selectedColors"></span></li>
-            <li><strong>Total de imagens pesquisadas:</strong> <span id="totalImages"></span></li>
+        <h3 id="metadata-title" style="display: none;">Metadados</h3> <!-- Título de metadados inicialmente oculto -->
+        <ul id="metadata" style="display: none;"> <!-- Listagem de metadados, inicialmente oculta -->
+            <li><strong>Cores selecionadas:</strong> <span id="selectedColors"></span></li>  <!-- Exibe as cores selecionadas -->
+            <li><strong>Total de imagens pesquisadas:</strong> <span id="totalImages"></span></li> <!-- Exibe o número total de imagens -->
             <li>
-                <li><strong>Total de imagens encontradas:</strong> <span id="foundImages"></span></li>
-                <ul id="colorCounts" style="padding-left: 20px;"> <!-- Adicionando um nível de indentação -->                    
-                    <!-- As contagens das cores serão inseridas aqui -->
+                <strong>Total de imagens encontradas:</strong> <span id="foundImages"></span> <!-- Exibe o número de imagens encontradas -->
+                <ul id="colorCounts" style="padding-left: 20px;"> <!-- Exibe a contagem das cores encontradas nas imagens -->
                 </ul>
             </li>
         </ul>
+    </div>
 </div>
-<script src="{% static 'js/result_search.js' %}"></script>
+
+<script src="{% static 'js/result_search.js' %}"></script>  <!-- Link para o arquivo JS que vai controlar o comportamento da página -->
 {% endblock %}

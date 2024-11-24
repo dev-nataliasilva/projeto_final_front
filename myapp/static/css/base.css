@@ -1,123 +1,126 @@
+/* Definindo variáveis de cores globais que serão usadas em todo o site */
 :root {
-    --cor-branco: #ffffff; 
-    --cor-preto: #000000; 
-    --cor-clara: #FFFBDF;
-    --cor-verde: #C6FFC1;
-    --cor-azul: #34656D;
-    --cor-azul-escuro: #334443; 
-    --cor-branco: #ffffff; 
+    --cor-branco: #ffffff;       /* Branco */
+    --cor-preto: #000000;        /* Preto */
+    --cor-clara: #FFFBDF;        /* Cor clara de fundo */
+    --cor-verde: #C6FFC1;        /* Cor verde */
+    --cor-azul: #34656D;         /* Cor azul */
+    --cor-azul-escuro: #334443;  /* Cor azul escuro */
+    --cor-branco: #ffffff;       /* Branco novamente (duplicado) */
 }
 
+/* Definição das fontes personalizadas que serão usadas no site */
 @font-face {
     font-family: 'Chloe';
-    src: url('../fonts/chloe font v1.ttf') format('truetype');
+    src: url('../fonts/chloe font v1.ttf') format('truetype'); /* Fonte Chloe */
 }
 
 @font-face {
     font-family: 'Wondercity';
-    src: url('../fonts/Wondercity.otf') format('truetype');
+    src: url('../fonts/Wondercity.otf') format('truetype'); /* Fonte Wondercity */
 }
 
-/* Barra de navegação personalizada */
+/* Estilo da barra de navegação personalizada */
 .navbar-custom {
-    background-color: var(--cor-azul-escuro);
-    font-size: 1.5rem;
-    width: 100%;         /* A barra ocupa 100% da largura da tela */
-    height: 8%;          /* A altura da barra de navegação */
-    display: flex;       /* Usamos flexbox para organizar o conteúdo da barra */
-    align-items: center; /* Centraliza os itens dentro da barra (logo e botões) verticalmente */
-    padding: 0 10px;     /* Um pequeno padding para não grudar as bordas */
-    position: fixed;     /* Barra de navegação fixa no topo */
-    top: 0;
+    background-color: var(--cor-azul-escuro);  /* Cor de fundo da navbar */
+    font-size: 1.5rem;                          /* Tamanho da fonte dos itens da navbar */
+    width: 100%;                                /* A navbar ocupa toda a largura */
+    height: 8%;                                 /* Altura fixa da navbar */
+    display: flex;                              /* Flexbox para organizar itens na navbar */
+    align-items: center;                        /* Alinha verticalmente os itens */
+    padding: 0 10px;                            /* Espaçamento lateral */
+    position: fixed;                            /* Fixa a navbar no topo da página */
+    top: 0;                                     /* Alinha a navbar no topo */
     left: 0;
     right: 0;
-    z-index: 999;        /* Garante que a barra de navegação fique acima de outros elementos */
+    z-index: 999;                               /* Garante que a navbar fique acima de outros elementos */
 }
 
-/* Ícone dentro da barra de navegação */
+/* Estilos para o ícone da navbar */
 .navbar-custom .navbar-brand {
     display: flex;
     justify-content: center;  /* Centraliza a imagem horizontalmente */
     align-items: center;      /* Centraliza a imagem verticalmente */
-    height: 100%;             /* A altura da área onde a imagem será inserida */
+    height: 100%;             /* A imagem ocupará toda a altura disponível */
 }
 
-/* Ajustes para a imagem */
+/* Ajuste da imagem do logo */
 .img-logo {
-    height: 100%;       /* A imagem ocupará 100% da altura da barra */
-    width: auto;        /* A largura da imagem será ajustada proporcionalmente */
-    object-fit: contain; /* A imagem se ajusta proporcionalmente sem distorcer */  
+    height: 100%;       /* A imagem ocupa 100% da altura */
+    width: auto;        /* Largura ajustada proporcionalmente */
+    object-fit: contain; /* A imagem se ajusta sem distorcer */
 }
 
-/* Estilos para os links de navegação */
+/* Estilos para links inativos na navbar */
 .nav-item.inactive .nav-link {
-    color: #b0b0b0 !important;
-    pointer-events: none;
+    color: #b0b0b0 !important;    /* Cor cinza para links inativos */
+    pointer-events: none;        /* Desativa o clique no link */
 }
 
-/* Outros estilos de botão e container */
+/* Estilos dos botões */
 .center-button {
     font-size: 1.8rem;
     padding: 15px 30px;
-    background-color: var(--cor-azul-escuro);
-    color: white;
-    border: none;
-    border-radius: 5px;
+    background-color: var(--cor-azul-escuro); /* Fundo azul escuro */
+    color: white;                          /* Cor do texto branca */
+    border: none;                          /* Sem borda */
+    border-radius: 5px;                    /* Bordas arredondadas */
 }
 
 .center-button:hover {
-    background-color: var(--cor-verde);
-    color: var(--cor-azul-escuro);
+    background-color: var(--cor-verde);  /* Cor verde quando passar o mouse */
+    color: var(--cor-azul-escuro);        /* Texto azul escuro */
 }
 
 .second-button {
     font-size: 1.8rem;
     padding: 13px 28px;
-    background-color: var(--cor-branco);
-    color: var(--cor-azul-escuro);
-    border: 2px solid var(--cor-azul-escuro);
-    border-radius: 5px;
+    background-color: var(--cor-branco);   /* Fundo branco */
+    color: var(--cor-azul-escuro);         /* Texto azul escuro */
+    border: 2px solid var(--cor-azul-escuro); /* Borda azul escuro */
+    border-radius: 5px;                    /* Bordas arredondadas */
 }
 
-/* Ajuste do corpo da página */
+/* Estilo global do corpo da página */
 body {
-    font-family: 'Wondercity', sans-serif;
-    font-size: 1.2rem;
-    margin: 0;
-    padding: 0;
-    display: flex;            /* Usamos flexbox no body */
-    flex-direction: column;   /* Os itens vão ser organizados verticalmente */
-    color:var(--cor-azul);
-    background-color:var(--cor-clara);
-    height: 100vh;
-    width: auto;
+    font-family: 'Wondercity', sans-serif;  /* Fonte personalizada para o corpo */
+    font-size: 1.2rem;                      /* Tamanho da fonte */
+    margin: 0;                              /* Remove margens padrões */
+    padding: 0;                             /* Remove o padding */
+    display: flex;                          /* Flexbox para layout do corpo */
+    flex-direction: column;                 /* Organiza os itens em coluna */
+    color: var(--cor-azul);                 /* Cor do texto azul */
+    background-color: var(--cor-clara);    /* Cor de fundo clara */
+    height: 100vh;                          /* Altura total da página */
+    width: auto;                            /* Largura automática */
 }
 
-/* Container para o conteúdo da página */
+/* Estilo do container principal */
 .container {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    flex-grow: 1;             /* Faz com que o container ocupe o restante do espaço disponível */
+    flex-grow: 1;             /* Faz o container ocupar o restante do espaço disponível */
     overflow-y: auto;         /* Permite rolagem vertical se necessário */
-    margin-top: 5%;           /* Adiciona espaço para a barra de navegação fixa */
+    margin-top: 5%;           /* Adiciona margem superior para não colar na navbar */
 }
 
-/* Container para o conteúdo da página */
+/* Estilo do container que organiza o conteúdo */
 .content-container {
-    display: flex;
-    flex: 1;                /* Faz o container ocupar o restante do espaço */
+    display: flex;            /* Usando flexbox para organizar os itens */
+    flex: 1;                  /* O container ocupa o restante do espaço */
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Estilo para telas grandes (a partir de 1200px de largura) */
 @media (min-width: 1200px) {
     .container {
-        max-width: none;  /* Remover a limitação de largura para a container */
+        max-width: none;  /* Remove a limitação de largura no container */
     }
 }
 
+/* Estilo para links, removendo a decoração ao passar o mouse */
 a:hover {
     text-decoration: none;
 }
-

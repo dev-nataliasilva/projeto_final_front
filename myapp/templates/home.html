@@ -1,28 +1,35 @@
-{% extends "base.html" %} 
-{% block title %} Onde Salvei? {% endblock %}
+{% extends "base.html" %}  <!-- Extende o template base.html para herdar o layout comum -->
+{% block title %}Onde Salvei?{% endblock %}  <!-- Define o título da página como "Onde Salvei?" -->
+
 {% block content %}
-{% load static %}
-<link rel="stylesheet" href="{% static 'css/home.css' %}"/>
+{% load static %}  <!-- Carrega as tags do Django para servir arquivos estáticos -->
+<link rel="stylesheet" href="{% static 'css/home.css' %}"/>  <!-- Link para o arquivo CSS específico da página home -->
 
 <!-- Seção principal (já considerando o layout flex do base.html) -->
 <div class="content-container">
     <!-- Seção do Texto -->
     <div class="left-section">
-        <p>Encontre exatamente a foto que você está procurando sem precisar baixar ou clicar de pasta em pasta.</p>
+        <p>Encontre exatamente a foto que você está procurando sem precisar baixar ou clicar de pasta em pasta.</p> <!-- Descrição explicativa do serviço -->
+        
         <div>
+            <!-- Link para a página de etapas do processo -->
             <a href="{% url 'steps' %}">
-                <button class="center-button">Experimente!</button>
+                <button class="center-button">Experimente!</button>  <!-- Botão que leva para a página 'steps' -->
             </a>
+            
+            <!-- Link para a página de introdução -->
             <a href="{% url 'introduction' %}">
-                <button class="second-button">Como funciona?</button>
+                <button class="second-button">Como funciona?</button>  <!-- Botão que leva para a página 'introduction' -->
             </a>
         </div>
     </div>
 
     <!-- Seção da Imagem -->
     <div class="right-section">
+        <!-- Imagem ilustrativa do serviço -->
         <img src="{% static 'images/home_image.png' %}" alt="Imagem descritiva">
     </div>
 </div>
-<script src="{% static 'js/home.js' %}"></script>
+
+<script src="{% static 'js/home.js' %}"></script>  <!-- Link para o arquivo JS que vai controlar o comportamento da página -->
 {% endblock %}

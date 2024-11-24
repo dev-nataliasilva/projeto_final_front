@@ -1,94 +1,94 @@
 /* Seção do texto */
 .left-section {
-    flex: 2;
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    font-size: 1rem;
+    flex: 2;                            /* A seção de texto ocupa 2 vezes mais espaço que a seção da imagem */
+    padding: 15px;                       /* Adiciona 15px de padding interno */
+    display: flex;                       /* Utiliza Flexbox para organizar os itens */
+    flex-direction: column;              /* Organiza os itens em uma coluna */
+    justify-content: flex-start;         /* Alinha os itens ao topo */
+    font-size: 1rem;                     /* Define o tamanho da fonte */
 }
 
 /* Seção da imagem */
 .right-section {
-    flex: 1;
-    padding: 15px;
-    padding-left: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    font-size: 1.2rem;
+    flex: 1;                            /* A seção de imagem ocupa 1 vez o espaço da seção de texto */
+    padding: 15px;                       /* Adiciona 15px de padding interno */
+    padding-left: 0;                     /* Remove o padding esquerdo */
+    display: flex;                       /* Utiliza Flexbox para organizar os itens */
+    flex-direction: column;              /* Organiza os itens em uma coluna */
+    justify-content: flex-start;         /* Alinha os itens ao topo */
+    font-size: 1.2rem;                   /* Define o tamanho da fonte */
 }
 
 /* Estilos da tabela de resultados */
 #results-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+    width: 100%;                         /* A tabela ocupa 100% da largura disponível */
+    border-collapse: collapse;           /* Remove espaços entre as células da tabela */
+    margin-top: 20px;                    /* Adiciona um espaço de 20px no topo da tabela */
 }
 
 #results-table th,
 #results-table td {
-    padding: 10px;
-    text-align: left;
-    border-bottom: 1px solid var(--cor-azul-escuro);
-    background-color: var(white);
+    padding: 10px;                       /* Adiciona 10px de padding nas células */
+    text-align: left;                    /* Alinha o texto à esquerda dentro das células */
+    border-bottom: 1px solid var(--cor-azul-escuro); /* Adiciona uma borda inferior azul escura */
+    background-color: var(white);         /* Define o fundo da célula como branco (mas está com erro de sintaxe, deveria ser `white`) */
 }
 
 #results-table th {
-    background-color: var(--cor-verde);
-    font-weight: bold;
+    background-color: var(--cor-verde);  /* Define a cor de fundo dos cabeçalhos como verde */
+    font-weight: bold;                   /* Deixa o texto dos cabeçalhos em negrito */
 }
 
 /* Estilo para a bolinha de cor */
 #results-table td div {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    display: inline-block;
-    margin-right: 10px; /* Espaço entre a bolinha e o texto */
+    width: 20px;                         /* Define a largura da bolinha de cor */
+    height: 20px;                        /* Define a altura da bolinha de cor */
+    border-radius: 50%;                  /* Faz a bolinha ser redonda */
+    display: inline-block;               /* Exibe a bolinha ao lado do texto */
+    margin-right: 10px;                  /* Adiciona 10px de espaço à direita da bolinha */
 }
 
 /* Estilos de loader e mensagens */
 #loader {
-    font-size: 1.5rem;
-    color: #007bff;
-    font-weight: bold;
+    font-size: 1.5rem;                   /* Define o tamanho da fonte do loader */
+    color: #007bff;                      /* Define a cor do texto como azul */
+    font-weight: bold;                   /* Deixa o texto em negrito */
 }
 
 #results-title,
 #metadata-title {
-    font-size: 1.25rem;
-    font-weight: bold;
+    font-size: 1.25rem;                  /* Define o tamanho da fonte dos títulos como 1.25rem */
+    font-weight: bold;                   /* Deixa o texto dos títulos em negrito */
 }
 
 #metadata {
-    margin-top: 20px;
-    list-style-type: none;
-    padding: 0;
+    margin-top: 20px;                    /* Adiciona 20px de espaço no topo da lista de metadados */
+    list-style-type: none;               /* Remove o estilo da lista (retira os pontos das listas) */
+    padding: 0;                          /* Remove o padding da lista */
 }
 
 #metadata li {
-    font-size: 1rem;
-    margin-bottom: 5px;
+    font-size: 1rem;                     /* Define o tamanho da fonte dos itens da lista como 1rem */
+    margin-bottom: 5px;                  /* Adiciona um espaço de 5px abaixo de cada item da lista */
 }
 
 #metadata li strong {
-    font-weight: bold;
+    font-weight: bold;                   /* Deixa o texto em negrito nos itens da lista */
 }
 
 /* Estilos responsivos */
 @media (max-width: 768px) {
     .left-section,
     .right-section {
-        padding: 10px;
+        padding: 10px;                    /* Reduz o padding para 10px nas seções quando a tela for menor que 768px */
     }
 
     #results-table {
-        font-size: 0.9rem;
+        font-size: 0.9rem;                /* Diminui o tamanho da fonte da tabela para 0.9rem em telas pequenas */
     }
 
     #results-table th,
     #results-table td {
-        padding: 8px;
+        padding: 8px;                     /* Reduz o padding das células da tabela para 8px */
     }
 }

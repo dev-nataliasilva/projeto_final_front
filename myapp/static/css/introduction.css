@@ -1,69 +1,69 @@
 /* Centralização da seção */
 .center-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: left;
-    padding: 15px;
+    display: flex;                      /* Utiliza Flexbox para organizar os itens */
+    flex-direction: column;             /* Organiza os itens em uma coluna */
+    align-items: center;                /* Centraliza os itens horizontalmente */
+    justify-content: center;            /* Centraliza os itens verticalmente */
+    text-align: left;                   /* Alinha o texto à esquerda dentro dos itens */
+    padding: 15px;                      /* Adiciona padding ao redor da seção */
 }
 
 /* Ajustes na imagem */
 .center-section img {
-    width: 80%;
-    height: auto;
-    margin: 20px 0;
+    width: 80%;                         /* A imagem ocupa 80% da largura da seção */
+    height: auto;                       /* Mantém a proporção da imagem */
+    margin: 20px 0;                     /* Adiciona uma margem de 20px na parte superior e inferior */
 }
 
 /* Estilização dos botões */
 .buttons-container {
-    display: flex;
-    justify-content: space-between; /* Espaça os botões da esquerda e direita */
-    width: 100%; /* Ocupa toda a largura disponível */
-    margin-top: 20px;
+    display: flex;                      /* Utiliza Flexbox para organizar os botões */
+    justify-content: space-between;     /* Espaça os botões da esquerda e direita */
+    width: 100%;                        /* Ocupa toda a largura disponível */
+    margin-top: 20px;                   /* Adiciona um espaço de 20px no topo da seção de botões */
 }
 
 /* Botões na esquerda */
 .left-buttons {
-    flex: 1;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
+    flex: 1;                            /* A área para os botões ocupa 50% da largura */
+    display: flex;                      /* Utiliza Flexbox para organizar os botões */
+    justify-content: flex-start;        /* Alinha os botões à esquerda */
+    align-items: flex-start;            /* Alinha os itens ao topo */
 }
 
 /* Botões na direita */
 .right-buttons {
-    flex: 1; /* Garantir que a área dos botões ocupe o mesmo espaço que a esquerda */
-    display: flex;
-    flex-direction: column; /* Organiza os botões em coluna */
-    justify-content: flex-start; /* Alinha os botões à esquerda */
-    align-items: flex-start; /* Faz com que os botões se alinhem à esquerda */
-    gap: 10px; /* Espaçamento entre os botões */
+    flex: 1;                            /* A área para os botões ocupa 50% da largura */
+    display: flex;                      /* Utiliza Flexbox para organizar os botões */
+    flex-direction: column;             /* Organiza os botões em uma coluna */
+    justify-content: flex-start;        /* Alinha os botões ao topo */
+    align-items: flex-start;            /* Faz com que os botões se alinhem à esquerda */
+    gap: 10px;                          /* Adiciona um espaço de 10px entre os botões */
 }
 
 /* Estilo comum para todos os botões na direita */
 .right-button {
-    font-size: 1.2rem;
-    padding: 0 10px; /* Tamanho do padding interno do botão */
-    background-color: var(--cor-branco);
-    color: var(--cor-azul-escuro);
-    border: 2px solid var(--cor-azul-escuro);
-    border-radius: 5px;
-    cursor: pointer;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start; /* Alinha o conteúdo do botão à esquerda */
-    width: 360px; /* Largura fixa para todos os botões */
-    height: 40px; /* Definir uma altura fixa para todos os botões */
-    box-sizing: border-box; /* Garantir que o padding e borda não afetem o tamanho total */
-    gap: 10px;
+    font-size: 1.2rem;                  /* Define o tamanho da fonte do botão */
+    padding: 0 10px;                    /* Define o padding (espaço interno) horizontal de 10px */
+    background-color: var(--cor-branco);/* Define a cor de fundo do botão como branca */
+    color: var(--cor-azul-escuro);      /* Define a cor do texto como azul escuro */
+    border: 2px solid var(--cor-azul-escuro); /* Define a borda do botão */
+    border-radius: 5px;                 /* Define o raio das bordas (cantinhos arredondados) */
+    cursor: pointer;                   /* Altera o cursor para o tipo "ponteiro" quando passa por cima do botão */
+    text-align: center;                 /* Centraliza o texto dentro do botão */
+    display: flex;                      /* Utiliza Flexbox para organizar o conteúdo dentro do botão */
+    align-items: center;                /* Centraliza os itens verticalmente dentro do botão */
+    justify-content: flex-start;        /* Alinha o conteúdo do botão à esquerda */
+    width: 360px;                       /* Define a largura fixa para os botões */
+    height: 40px;                       /* Define a altura fixa para os botões */
+    box-sizing: border-box;             /* Garante que o padding e a borda não afetem as dimensões totais do botão */
+    gap: 10px;                          /* Adiciona espaço entre o texto e os ícones no botão */
 }
 
 /* Estilo dos ícones dentro dos botões */
 .github-icon {
-    max-width: 20px; /* Largura máxima do ícone */
-    max-height: 20px; /* Altura máxima do ícone */
-    object-fit: contain; /* Ajusta a imagem sem distorcer */
-    vertical-align: middle; /* Alinha o ícone com o texto */
+    max-width: 20px;                    /* Define a largura máxima do ícone para 20px */
+    max-height: 20px;                   /* Define a altura máxima do ícone para 20px */
+    object-fit: contain;                /* Garante que o ícone se ajuste sem distorcer */
+    vertical-align: middle;             /* Alinha verticalmente o ícone ao meio do texto */
 }

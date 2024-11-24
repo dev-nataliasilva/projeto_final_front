@@ -1,155 +1,158 @@
 /* Barra de progresso */
 .progress-bar {
-    display: flex;
-    justify-content: space-between;
-    width: 85%;
-    height: 15px;
-    flex-direction: row;
-    background-color: #ccc;
-    margin-top: 2%;  
-    border-radius: 15px;
+    display: flex;                        /* Usa Flexbox para a barra de progresso */
+    justify-content: space-between;       /* Espaça os passos de forma equidistante */
+    width: 85%;                           /* Define a largura da barra de progresso como 85% da largura disponível */
+    height: 15px;                         /* Define a altura da barra de progresso */
+    flex-direction: row;                  /* Organiza os itens na horizontal */
+    background-color: #ccc;               /* Define a cor de fundo da barra de progresso */
+    margin-top: 2%;                       /* Adiciona uma margem superior de 2% */
+    border-radius: 15px;                  /* Deixa a barra com bordas arredondadas */
 }
 
 .progress-step {
-    width: 15px; /* Maior tamanho para facilitar a interação */
-    height: 15px;
-    border-radius: 50%;
-    background-color: rgb(161, 158, 158);
-    transition: background-color 0.3s ease, transform 0.3s ease, width 0.3s ease;
-    cursor: pointer; /* Deixa a bolinha interativa */
+    width: 15px;                          /* Define a largura das bolinhas de progresso */
+    height: 15px;                         /* Define a altura das bolinhas de progresso */
+    border-radius: 50%;                   /* Faz as bolinhas ficarem redondas */
+    background-color: rgb(161, 158, 158); /* Cor de fundo padrão para as bolinhas */
+    transition: background-color 0.3s ease, transform 0.3s ease, width 0.3s ease; /* Adiciona transições suaves para cor, transformação e largura */
+    cursor: pointer;                     /* Deixa a bolinha interativa */
 }
 
+/* Bolinha ativa */
 .progress-step.active {
-    background-color: var(--cor-verde);
-    transform: scale(1.5);
+    background-color: var(--cor-verde);   /* Muda a cor da bolinha para verde quando está ativa */
+    transform: scale(1.5);                 /* Aumenta o tamanho da bolinha quando está ativa */
 }
 
+/* Bolinha completada */
 .progress-step.completed {
-    background-color: var(--cor-azul-escuro);
+    background-color: var(--cor-azul-escuro); /* Muda a cor para azul escuro quando completada */
 }
 
 .progress-step + .progress-step {
-    margin-left: 10px;
+    margin-left: 10px;                    /* Adiciona um espaço entre as bolinhas */
 }
 
 .progress-step:first-child {
-    margin-left: 0;
+    margin-left: 0;                       /* Remove o espaço à esquerda da primeira bolinha */
 }
 
 /* Container de conteúdo */
 .step-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 85%; /* Largura fixa de 80% da tela */
-    height: 83h; /* Altura fixa de 80% da altura da tela (viewport) */
-    margin: 0 auto; /* Centraliza a .step-container */
-    overflow: hidden; /* Garante que o conteúdo não ultrapasse os limites da .step-container */
+    display: flex;                        /* Usa Flexbox para organizar os itens */
+    flex-direction: column;               /* Organiza os itens em coluna */
+    align-items: center;                  /* Alinha os itens ao centro */
+    width: 85%;                            /* Largura fixa de 85% da tela */
+    height: 83vh;                          /* Altura fixa de 83% da altura da tela */
+    margin: 0 auto;                       /* Centraliza o container */
+    overflow: hidden;                     /* Garante que o conteúdo não ultrapasse os limites */
 }
 
 .step-content {
-    text-align: center;
-    width: 85%; /* Agora o conteúdo de cada etapa terá 80% da largura da tela */
-    height: 83vh; /* Agora o conteúdo de cada etapa terá 70% da altura da tela */
-    margin: 0 auto; /* Centraliza o conteúdo dentro do seu contêiner */
-    overflow-y: auto; /* Permite rolagem se o conteúdo for maior que a altura */
-    background-color: var(--cor-branco);
+    text-align: center;                   /* Alinha o conteúdo centralizado */
+    width: 85%;                            /* Largura de 85% da tela para o conteúdo */
+    height: 83vh;                          /* Altura de 83% da tela para o conteúdo */
+    margin: 0 auto;                       /* Centraliza o conteúdo dentro do seu container */
+    overflow-y: auto;                     /* Permite rolagem se o conteúdo for maior que a altura */
+    background-color: var(--cor-branco);   /* Cor de fundo do conteúdo */
 }
 
 /* Garantir que os botões fiquem no fundo da tela */
 .step-content .steps-buttons {
-    margin-top: auto; /* Faz o botão "flutuar" para a parte inferior */
+    margin-top: auto;                     /* Empurra os botões para o fundo da tela */
 }
 
-/* Outros estilos de botão e container */
+/* Estilos dos botões */
 button {
-    font-size: 1.2rem;
-    padding: 10px 20px;
-    background-color: var(--cor-azul-escuro);
-    color: white;
-    border: none;
-    border-radius: 5px;
+    font-size: 1.2rem;                    /* Define o tamanho da fonte do botão */
+    padding: 10px 20px;                   /* Adiciona padding interno no botão */
+    background-color: var(--cor-azul-escuro); /* Cor de fundo do botão */
+    color: white;                         /* Cor do texto do botão */
+    border: none;                         /* Remove a borda do botão */
+    border-radius: 5px;                   /* Borda arredondada do botão */
 }
 
 button:hover {
-    background-color: var(--cor-verde);
-    color: var(--cor-azul-escuro);
+    background-color: var(--cor-verde);   /* Muda a cor de fundo para verde ao passar o mouse */
+    color: var(--cor-azul-escuro);         /* Muda a cor do texto para azul escuro */
 }
 
 button:focus {
-    outline: none;
+    outline: none;                        /* Remove o contorno do botão quando está focado */
 }
 
+/* Estilos para botões desabilitados */
 .next-step-disabled {
-    background-color: #b0bec5; /* Cor mais clara para indicar desabilitado */
-    color: #7986cb;
-    cursor: not-allowed;
+    background-color: #b0bec5;            /* Cor de fundo mais clara para indicar desabilitado */
+    color: #7986cb;                       /* Cor de texto mais clara para botões desabilitados */
+    cursor: not-allowed;                  /* Modifica o cursor para indicar que não pode ser clicado */
 }
 
 button.next-step-disabled:hover {
-    background-color: #b0bec5; /* Manter a cor desabilitada */
-    color: #7986cb;
+    background-color: #b0bec5;            /* Mantém a cor desabilitada ao passar o mouse */
+    color: #7986cb;                       /* Mantém a cor do texto desabilitada */
 }
 
 /* Tela responsiva */
 @media (max-width: 768px) {
     .step-container {
-        width: 100%;
-        height: 100%;
+        width: 100%;                       /* Largura de 100% da tela em dispositivos menores */
+        height: 100%;                      /* Altura de 100% da tela em dispositivos menores */
     }
 
     .step-content {
-        height: 100%;
-        padding: 20px;
+        height: 100%;                      /* A altura do conteúdo também é 100% da tela */
+        padding: 20px;                     /* Adiciona padding ao conteúdo para telas pequenas */
     }
 }
 
-/* Estilo para as bolinhas coloridas */
+/* Estilo para as bolinhas coloridas (Escolha de cores) */
 .color-picker {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    display: flex;                        /* Usa Flexbox para organizar as bolinhas */
+    justify-content: space-around;        /* Distribui as bolinhas de maneira igual */
+    margin-top: 20px;                     /* Adiciona margem superior de 20px */
+    margin-bottom: 20px;                  /* Adiciona margem inferior de 20px */
 }
 
 .color-circle {
-    display: inline-block;
-    position: relative;
-    width: 40px;
-    height: 40px;
-    margin: 0;
-    cursor: pointer;
+    display: inline-block;                /* Exibe cada bolinha em linha */
+    position: relative;                   /* Define posição relativa para o controle do checkbox */
+    width: 40px;                          /* Define a largura da bolinha */
+    height: 40px;                         /* Define a altura da bolinha */
+    margin: 0;                            /* Remove margem entre as bolinhas */
+    cursor: pointer;                     /* Deixa a bolinha interativa */
 }
 
 .color-circle .color {
-    display: block;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    border: 2px solid #ccc;
-    transition: transform 0.2s ease-in-out;
-}
-
-.color-circle input {
-    position: absolute;
-    opacity: 0; /* Oculta o checkbox */
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    cursor: pointer;
+    display: block;                       /* Exibe a cor como bloco */
+    width: 100%;                          /* A cor ocupa toda a área do círculo */
+    height: 100%;                         /* A cor ocupa toda a altura do círculo */
+    border-radius: 50%;                   /* Faz a bolinha ser redonda */
+    border: 2px solid #ccc;               /* Adiciona uma borda ao redor da bolinha */
+    transition: transform 0.2s ease-in-out; /* Transição suave para o efeito de seleção */
 }
 
 /* Efeito quando o checkbox é selecionado */
+.color-circle input {
+    position: absolute;                   /* Coloca o checkbox dentro da bolinha */
+    opacity: 0;                           /* Oculta o checkbox */
+    width: 100%;                          /* Faz o checkbox ocupar todo o tamanho da bolinha */
+    height: 100%;                         /* Faz o checkbox ocupar toda a altura da bolinha */
+    top: 0;                               /* Posiciona o checkbox no topo */
+    left: 0;                              /* Posiciona o checkbox à esquerda */
+    cursor: pointer;                     /* Deixa o cursor como pointer ao passar sobre a bolinha */
+}
+
 .color-circle input:checked + .color {
-    transform: scale(1.1); /* Aumenta a bolinha ao selecionar */
-    border: 2px solid var(--cor-azul-escuro); /* Adiciona uma borda quando selecionada */
+    transform: scale(1.1);                /* Aumenta a bolinha ao selecionar */
+    border: 2px solid var(--cor-azul-escuro); /* Adiciona uma borda azul escura quando selecionada */
 }
 
 /* Ajustar o tamanho da imagem no Step 2 */
 #step-2 img {
-    width: 50%; /* Define que a imagem deve ocupar 50% da largura do step-content */
-    height: auto; /* Mantém a proporção da imagem */
-    margin-top: 20px; /* Adiciona um pequeno espaçamento superior */
-    margin-bottom: 20px; /* Adiciona um pequeno espaçamento inferior */
+    width: 50%;                           /* Define que a imagem deve ocupar 50% da largura do container */
+    height: auto;                         /* Mantém a proporção da imagem */
+    margin-top: 20px;                     /* Adiciona um pequeno espaçamento superior */
+    margin-bottom: 20px;                  /* Adiciona um pequeno espaçamento inferior */
 }

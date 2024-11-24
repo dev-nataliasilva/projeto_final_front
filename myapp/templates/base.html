@@ -1,27 +1,46 @@
-{% load static %}
+{% load static %}  <!-- Carrega as tags do Django para servir arquivos estáticos -->
 
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>  <!-- Define o tipo de documento como HTML5 -->
+<html lang="en">  <!-- Início do HTML com a definição do idioma como inglês -->
+
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      {% block title %} Onde salvei? {% endblock %}
-    </title>
-    <link rel="icon" href="{% static 'images/Onde salvei - lemure preto.png' %}" type="image/x-icon" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="{% static 'css/base.css' %}"/>  
+    <meta charset="UTF-8" />  <!-- Define o conjunto de caracteres como UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />  <!-- Torna a página responsiva em dispositivos móveis -->
     
+    <title>
+      {% block title %} Onde salvei? {% endblock %}  <!-- Define o título da página. O conteúdo pode ser sobrescrito nas páginas filhas com o bloco 'title' -->
+    </title>
+    
+    <link rel="icon" href="{% static 'images/Onde salvei - lemure preto.png' %}" type="image/x-icon" />  <!-- Define o ícone da aba do navegador -->
+    
+    <!-- Link para o CSS do Bootstrap para estilização da interface -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
+    
+    <!-- Link para o arquivo CSS específico da base -->
+    <link rel="stylesheet" href="{% static 'css/base.css' %}"/>  
+
+    <!-- Link para o script JavaScript da base (geralmente funcionalidades comuns em todas as páginas) -->
     <script src="{% static 'js/base.js' %}"></script>
+    
+    <!-- Inclusão do jQuery e Bootstrap para funcionalidades interativas -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
   </head>
+
   <body>
+    <!-- Barra de navegação do site -->
     <nav class="navbar navbar-expand-lg navbar-light navbar-custom">
       <a class="navbar-brand" href="{% url 'home' %}">
+        <!-- Logo da aplicação com link para a página inicial -->
         <img src="{% static 'images/Onde salvei - logo branca.png' %}" alt="Onde salvei?" class="img-logo"/>
       </a>    
     </nav>
-    <div class="container">{% block content %} {% endblock %}</div>
+
+    <!-- Conteúdo da página, que será substituído nas páginas filhas através do bloco 'content' -->
+    <div class="container">
+      {% block content %} 
+      {% endblock %}
+    </div>
   </body>
+
 </html>
