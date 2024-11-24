@@ -1,126 +1,31 @@
-/* Definindo variáveis de cores globais que serão usadas em todo o site */
-:root {
-    --cor-branco: #ffffff;       /* Branco */
-    --cor-preto: #000000;        /* Preto */
-    --cor-clara: #FFFBDF;        /* Cor clara de fundo */
-    --cor-verde: #C6FFC1;        /* Cor verde */
-    --cor-azul: #34656D;         /* Cor azul */
-    --cor-azul-escuro: #334443;  /* Cor azul escuro */
-    --cor-branco: #ffffff;       /* Branco novamente (duplicado) */
+/* Ajuste do corpo da página */
+body {       
+    font-size: 2rem;  /* Define o tamanho da fonte do corpo da página para 2rem (maior que o padrão) */
 }
 
-/* Definição das fontes personalizadas que serão usadas no site */
-@font-face {
-    font-family: 'Chloe';
-    src: url('../fonts/chloe font v1.ttf') format('truetype'); /* Fonte Chloe */
+/* Seção do texto */
+.left-section {
+    flex: 1;                /* A seção de texto ocupa metade do espaço disponível no container */
+    padding: 15px;          /* Adiciona um espaçamento de 15px em torno do conteúdo da seção */
+    padding-right: 0;       /* Remove o padding à direita da seção de texto */
+    display: flex;          /* Define a seção como um container flexível */
+    flex-direction: column; /* Organiza os elementos da seção em coluna (verticalmente) */
+    justify-content: center;/* Centraliza o conteúdo verticalmente dentro da seção */
 }
 
-@font-face {
-    font-family: 'Wondercity';
-    src: url('../fonts/Wondercity.otf') format('truetype'); /* Fonte Wondercity */
+/* Seção da imagem */
+.right-section {
+    flex: 1;                /* A seção de imagem ocupa metade do espaço disponível no container */
+    display: flex;          /* Define a seção como um container flexível */
+    justify-content: flex-end; /* Alinha o conteúdo da seção à direita */
+    align-items: center;    /* Alinha os itens no centro verticalmente */
+    padding-left: 20px;     /* Adiciona 20px de espaçamento à esquerda da seção de imagem */
+    padding-right: 10px;    /* Adiciona 10px de espaçamento à direita da seção de imagem */
 }
 
-/* Estilo da barra de navegação personalizada */
-.navbar-custom {
-    background-color: var(--cor-azul-escuro);  /* Cor de fundo da navbar */
-    font-size: 1.5rem;                          /* Tamanho da fonte dos itens da navbar */
-    width: 100%;                                /* A navbar ocupa toda a largura */
-    height: 8%;                                 /* Altura fixa da navbar */
-    display: flex;                              /* Flexbox para organizar itens na navbar */
-    align-items: center;                        /* Alinha verticalmente os itens */
-    padding: 0 10px;                            /* Espaçamento lateral */
-    position: fixed;                            /* Fixa a navbar no topo da página */
-    top: 0;                                     /* Alinha a navbar no topo */
-    left: 0;
-    right: 0;
-    z-index: 999;                               /* Garante que a navbar fique acima de outros elementos */
-}
-
-/* Estilos para o ícone da navbar */
-.navbar-custom .navbar-brand {
-    display: flex;
-    justify-content: center;  /* Centraliza a imagem horizontalmente */
-    align-items: center;      /* Centraliza a imagem verticalmente */
-    height: 100%;             /* A imagem ocupará toda a altura disponível */
-}
-
-/* Ajuste da imagem do logo */
-.img-logo {
-    height: 100%;       /* A imagem ocupa 100% da altura */
-    width: auto;        /* Largura ajustada proporcionalmente */
-    object-fit: contain; /* A imagem se ajusta sem distorcer */
-}
-
-/* Estilos para links inativos na navbar */
-.nav-item.inactive .nav-link {
-    color: #b0b0b0 !important;    /* Cor cinza para links inativos */
-    pointer-events: none;        /* Desativa o clique no link */
-}
-
-/* Estilos dos botões */
-.center-button {
-    font-size: 1.8rem;
-    padding: 15px 30px;
-    background-color: var(--cor-azul-escuro); /* Fundo azul escuro */
-    color: white;                          /* Cor do texto branca */
-    border: none;                          /* Sem borda */
-    border-radius: 5px;                    /* Bordas arredondadas */
-}
-
-.center-button:hover {
-    background-color: var(--cor-verde);  /* Cor verde quando passar o mouse */
-    color: var(--cor-azul-escuro);        /* Texto azul escuro */
-}
-
-.second-button {
-    font-size: 1.8rem;
-    padding: 13px 28px;
-    background-color: var(--cor-branco);   /* Fundo branco */
-    color: var(--cor-azul-escuro);         /* Texto azul escuro */
-    border: 2px solid var(--cor-azul-escuro); /* Borda azul escuro */
-    border-radius: 5px;                    /* Bordas arredondadas */
-}
-
-/* Estilo global do corpo da página */
-body {
-    font-family: 'Wondercity', sans-serif;  /* Fonte personalizada para o corpo */
-    font-size: 1.2rem;                      /* Tamanho da fonte */
-    margin: 0;                              /* Remove margens padrões */
-    padding: 0;                             /* Remove o padding */
-    display: flex;                          /* Flexbox para layout do corpo */
-    flex-direction: column;                 /* Organiza os itens em coluna */
-    color: var(--cor-azul);                 /* Cor do texto azul */
-    background-color: var(--cor-clara);    /* Cor de fundo clara */
-    height: 100vh;                          /* Altura total da página */
-    width: auto;                            /* Largura automática */
-}
-
-/* Estilo do container principal */
-.container {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    flex-grow: 1;             /* Faz o container ocupar o restante do espaço disponível */
-    overflow-y: auto;         /* Permite rolagem vertical se necessário */
-    margin-top: 5%;           /* Adiciona margem superior para não colar na navbar */
-}
-
-/* Estilo do container que organiza o conteúdo */
-.content-container {
-    display: flex;            /* Usando flexbox para organizar os itens */
-    flex: 1;                  /* O container ocupa o restante do espaço */
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Estilo para telas grandes (a partir de 1200px de largura) */
-@media (min-width: 1200px) {
-    .container {
-        max-width: none;  /* Remove a limitação de largura no container */
-    }
-}
-
-/* Estilo para links, removendo a decoração ao passar o mouse */
-a:hover {
-    text-decoration: none;
+/* Ajustes na imagem */
+.right-section img {
+    width: 85%;             /* Define a largura da imagem como 85% da largura da seção */
+    height: auto;           /* Define a altura da imagem para ser automática, mantendo a proporção */
+    object-fit: cover;      /* Faz com que a imagem cubra a área disponível, mantendo a proporção sem distorção */
 }
