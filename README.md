@@ -20,6 +20,7 @@ Uma API REST foi construída usando o **Django REST Framework** para conectar o 
 O Agent Desktop é uma aplicação para desktops que permite aos usuários selecionar uma pasta com imagens. Ele calcula a média das cores (em formato RGB) de cada imagem e exibe essas informações. A aplicação inclui:
 - Uma interface gráfica para facilitar a seleção de pastas.
 - Um ícone no system tray para acesso rápido às funcionalidades.
+  
 [Repositório do Agent Desktop](https://github.com/dev-nataliasilva/projeto_final_agent)
 
 ### 🚀 Como Executar
