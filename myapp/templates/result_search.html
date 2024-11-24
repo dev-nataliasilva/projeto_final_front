@@ -4,32 +4,39 @@
 {% block content %}
 <link rel="stylesheet" href="{% static 'css/result_search.css' %}"/>
 
-<div class="content-container">   
+<div class="content-container">
     <!-- Seção da esquerda (Resultados) -->
     <div class="left-section">
         <div id="results-container">
             <h3 id="results-title" style="display: none;">Resultados</h3> <!-- Oculto inicialmente -->
-            <div id="results">
-                <div id="loader">Carregando...</div> <!-- Loader visível inicialmente -->
-            </div>
+            <table id="results-table" style="display: none;">
+                <thead>
+                    <tr>
+                        <th>Caminho do Arquivo</th>
+                        <th>Cor Prevista</th>
+                    </tr>
+                </thead>
+                <tbody id="results-body">
+                    <!-- Os dados serão preenchidos dinamicamente aqui -->
+                </tbody>
+            </table>
+            <div id="loader">Carregando...</div> <!-- Loader visível inicialmente -->
         </div>
     </div>
 
     <!-- Seção da direita (Metadados) -->
     <div class="right-section">
-       <h3 id="metadata-title" style="display: none;">Metadados</h3> <!-- Oculto inicialmente -->
-       <ul id="metadata" style="display: none;"> <!-- Inicialmente oculto -->
-           <li><strong>Cores selecionadas:</strong> <span id="selectedColors"></span></li>
-           <li><strong>Total de imagens:</strong> <span id="totalImages"></span></li>
-           <li>
-               <strong>Imagens encontradas:</strong>
-               <ul>
-                   <li><strong>Total:</strong> <span id="foundImages"></span></li>
-                   <li id="colorCounts"></li>
-               </ul>
-           </li>
-       </ul>
-    </div>
+        <h3 id="metadata-title" style="display: none;">Metadados</h3> <!-- Oculto inicialmente -->
+        <ul id="metadata" style="display: none;"> <!-- Inicialmente oculto -->
+            <li><strong>Cores selecionadas:</strong> <span id="selectedColors"></span></li>
+            <li><strong>Total de imagens pesquisadas:</strong> <span id="totalImages"></span></li>
+            <li>
+                <li><strong>Total de imagens encontradas:</strong> <span id="foundImages"></span></li>
+                <ul id="colorCounts" style="padding-left: 20px;"> <!-- Adicionando um nível de indentação -->                    
+                    <!-- As contagens das cores serão inseridas aqui -->
+                </ul>
+            </li>
+        </ul>
 </div>
 <script src="{% static 'js/result_search.js' %}"></script>
 {% endblock %}

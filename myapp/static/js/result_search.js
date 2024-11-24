@@ -5,6 +5,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const metadataTitle = document.getElementById("metadata-title"); // Título "Metadados"
     const metadataContainer = document.getElementById("metadata"); // Contêiner dos metadados
 
+    const resultsTable = document.getElementById("results-table");
+    const resultsBody = document.getElementById("results-body");
+
     // Inicialmente, esconde os títulos e mantém o loader visível
     resultsTitle.style.display = "none";
     metadataTitle.style.display = "none";
@@ -57,16 +60,25 @@ document.addEventListener("DOMContentLoaded", function () {
             // Oculta o loader
             loader.style.display = "none";
 
-            // Exibir o título e os resultados
+            // Exibir o título e a tabela de resultados
             resultsTitle.style.display = "block";
+            resultsTable.style.display = "table";  // Exibe a tabela
             metadataTitle.style.display = "block";
             metadataContainer.style.display = "block";
 
-            // Preencher os resultados detalhados
+            // Preencher a tabela com os resultados
             postData.forEach(fileInfo => {
-                const fileElement = document.createElement("div");
-                fileElement.innerText = `Caminho: ${fileInfo.path}, Média RGB: ${fileInfo.average_rgb}, Cor Prevista: ${fileInfo.predicted_color}`;
-                resultsContainer.appendChild(fileElement);
+                const row = document.createElement("tr");
+
+                const pathCell = document.createElement("td");
+                pathCell.textContent = fileInfo.path;
+                row.appendChild(pathCell);
+
+                const colorCell = document.createElement("td");
+                colorCell.textContent = fileInfo.predicted_color;
+                row.appendChild(colorCell);
+
+                resultsBody.appendChild(row);
             });
 
             // Preencher os metadados

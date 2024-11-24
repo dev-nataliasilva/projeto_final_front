@@ -1,21 +1,94 @@
 /* Seção do texto */
 .left-section {
-    flex: 1;                /* A seção de texto ocupa metade do espaço */
+    flex: 2;
     padding: 15px;
-    padding-right: 0;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     font-size: 1rem;
 }
 
 /* Seção da imagem */
 .right-section {
-    flex: 1;                /* A seção de texto ocupa metade do espaço */
+    flex: 1;
     padding: 15px;
     padding-left: 0;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
+    font-size: 1.2rem;
+}
+
+/* Estilos da tabela de resultados */
+#results-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#results-table th,
+#results-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid var(--cor-azul-escuro);
+    background-color: var(white);
+}
+
+#results-table th {
+    background-color: var(--cor-verde);
+    font-weight: bold;
+}
+
+/* Estilo para a bolinha de cor */
+#results-table td div {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 10px; /* Espaço entre a bolinha e o texto */
+}
+
+/* Estilos de loader e mensagens */
+#loader {
+    font-size: 1.5rem;
+    color: #007bff;
+    font-weight: bold;
+}
+
+#results-title,
+#metadata-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+#metadata {
+    margin-top: 20px;
+    list-style-type: none;
+    padding: 0;
+}
+
+#metadata li {
     font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+#metadata li strong {
+    font-weight: bold;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .left-section,
+    .right-section {
+        padding: 10px;
+    }
+
+    #results-table {
+        font-size: 0.9rem;
+    }
+
+    #results-table th,
+    #results-table td {
+        padding: 8px;
+    }
 }
