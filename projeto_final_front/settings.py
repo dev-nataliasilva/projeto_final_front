@@ -8,8 +8,8 @@ SECRET_KEY = 'django-insecure-(2qx6b(6#o=v8z7lid&is87_edlg_@y785qrti3*odr!+@l3%k
 DEBUG = False
 ALLOWED_HOSTS = [
     'ondesalvei-afacdb17af64.herokuapp.com',  # Front (própria aplicação) 
-    'localhost',  # Agent Desktop (local)
-    '127.0.0.1',  # Agent Desktop (local)
+    # 'localhost',  
+    # '127.0.0.1',  
 ]
 
 INSTALLED_APPS = [
@@ -48,11 +48,11 @@ USE_I18N = False
 USE_TZ = False
 
 # Configuração de arquivos estáticos
-STATIC_URL = 'myapp/static/'
-# STATICFILES_DIRS = [
-#     BASE_DIR / "myapp/static",
-# ]
-STATIC_ROOT = BASE_DIR / "myapp/static"
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    BASE_DIR / "myapp/static",
+]
+STATIC_ROOT = BASE_DIR / "myapp/staticfiles"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
