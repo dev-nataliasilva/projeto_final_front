@@ -48,11 +48,11 @@ USE_I18N = False
 USE_TZ = False
 
 # Configuração de arquivos estáticos
-STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    BASE_DIR / "myapp/static",
-]
-STATIC_ROOT = BASE_DIR / "myapp/staticfiles"
+STATIC_URL = 'myapp/static/'
+# STATICFILES_DIRS = [
+#     BASE_DIR / "myapp/static",
+# ]
+STATIC_ROOT = BASE_DIR / "myapp/static"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 

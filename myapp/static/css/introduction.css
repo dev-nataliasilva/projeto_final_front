@@ -1,0 +1,69 @@
+/* Centralização da seção */
+.center-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    padding: 15px;
+}
+
+/* Ajustes na imagem */
+.center-section img {
+    width: 80%;
+    height: auto;
+    margin: 20px 0;
+}
+
+/* Estilização dos botões */
+.buttons-container {
+    display: flex;
+    justify-content: space-between; /* Espaça os botões da esquerda e direita */
+    width: 100%; /* Ocupa toda a largura disponível */
+    margin-top: 20px;
+}
+
+/* Botões na esquerda */
+.left-buttons {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+/* Botões na direita */
+.right-buttons {
+    flex: 1; /* Garantir que a área dos botões ocupe o mesmo espaço que a esquerda */
+    display: flex;
+    flex-direction: column; /* Organiza os botões em coluna */
+    justify-content: flex-start; /* Alinha os botões à esquerda */
+    align-items: flex-start; /* Faz com que os botões se alinhem à esquerda */
+    gap: 10px; /* Espaçamento entre os botões */
+}
+
+/* Estilo comum para todos os botões na direita */
+.right-button {
+    font-size: 1.2rem;
+    padding: 0 10px; /* Tamanho do padding interno do botão */
+    background-color: var(--cor-branco);
+    color: var(--cor-azul-escuro);
+    border: 2px solid var(--cor-azul-escuro);
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Alinha o conteúdo do botão à esquerda */
+    width: 360px; /* Largura fixa para todos os botões */
+    height: 40px; /* Definir uma altura fixa para todos os botões */
+    box-sizing: border-box; /* Garantir que o padding e borda não afetem o tamanho total */
+    gap: 10px;
+}
+
+/* Estilo dos ícones dentro dos botões */
+.github-icon {
+    max-width: 20px; /* Largura máxima do ícone */
+    max-height: 20px; /* Altura máxima do ícone */
+    object-fit: contain; /* Ajusta a imagem sem distorcer */
+    vertical-align: middle; /* Alinha o ícone com o texto */
+}

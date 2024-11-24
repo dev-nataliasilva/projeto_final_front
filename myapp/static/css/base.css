@@ -82,7 +82,7 @@
 /* Ajuste do corpo da página */
 body {
     font-family: 'Wondercity', sans-serif;
-    font-size: 1.8rem;
+    font-size: 1.2rem;
     margin: 0;
     padding: 0;
     display: flex;            /* Usamos flexbox no body */
@@ -120,3 +120,4 @@ body {
 a:hover {
     text-decoration: none;
 }
+
