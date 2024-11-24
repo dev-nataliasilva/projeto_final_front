@@ -9,6 +9,7 @@ Desenvolvido com o framework **Django**, este módulo é responsável por render
 A Inteligência Artificial foi desenvolvida com **TensorFlow** e **Python** para classificar cores com base em arrays RGB fornecidos como entrada. O sistema foi estruturado de forma modular, com:
 - **Treinamento**: A pasta `train` contém os scripts e dados necessários para treinar o modelo.
 - **Inferência**: A pasta `inference` é dedicada a processar as previsões do modelo treinado.
+
 Essa organização facilita a manutenção e escalabilidade do sistema.  
 [Repositório do módulo de IA](https://github.com/dev-nataliasilva/projeto_final_ia)
 
